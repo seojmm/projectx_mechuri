@@ -3,9 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useRecoilState } from "recoil";
+import { situationState } from "../../atoms/situationState";
 
 export default function MenuPage() {
 	const router = useRouter();
+	const [situation, setSituation] = useRecoilState(situationState);
 
 	return (
 		<div className="h-full flex flex-col">
@@ -28,6 +31,7 @@ export default function MenuPage() {
 				<button
 					className="w-9/12 text-white bg-[#43b9dd] focus:bg-[#1187AB] h-12 shadow-md shadow-gray-500"
 					onClick={() => {
+						setSituation("1");
 						router.push(`/place`);
 					}}
 				>
@@ -36,6 +40,7 @@ export default function MenuPage() {
 				<button
 					className="w-9/12 text-white bg-[#43b9dd] focus:bg-[#1187AB] h-12 shadow-md shadow-gray-500"
 					onClick={() => {
+						setSituation("2");
 						router.push(`/place`);
 					}}
 				>
@@ -44,6 +49,7 @@ export default function MenuPage() {
 				<button
 					className="w-9/12 text-white bg-[#43b9dd] focus:bg-[#1187AB] h-12 shadow-md shadow-gray-500"
 					onClick={() => {
+						setSituation("3");
 						router.push(`/place`);
 					}}
 				>
@@ -52,6 +58,7 @@ export default function MenuPage() {
 				<button
 					className="w-9/12 text-white bg-[#43b9dd] focus:bg-[#1187AB] h-12 shadow-md shadow-gray-500"
 					onClick={() => {
+						setSituation("4");
 						router.push(`/place`);
 					}}
 				>
@@ -61,6 +68,7 @@ export default function MenuPage() {
 					className="w-9/12 text-white bg-[#43b9dd] focus:bg-[#1187AB] h-12 shadow-md shadow-gray-500"
 					onClick={() => {
 						router.push(`/place`);
+						setSituation("5");
 					}}
 				>
 					급해~
